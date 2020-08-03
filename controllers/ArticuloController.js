@@ -33,7 +33,7 @@ export default {
     },
     queryCodigo: async (req, res, next) => {
         try{
-            const reg = await models.Articulo.findOne({_id: req.query._id})
+            const reg = await models.Articulo.findOne({codigo: req.query.codigo})
                 .populate('categoria', { nombre: 1 });
 
             if (!reg){
